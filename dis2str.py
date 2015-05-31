@@ -1,6 +1,8 @@
 #!/usr/bin/env python
 # -*- cording:utf-8 -*-
 
+# Author: @shiracamus
+
 import sys
 
 HEXA_PER_LINE = 8
