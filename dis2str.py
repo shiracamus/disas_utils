@@ -100,7 +100,7 @@ if __name__ == '__main__':
             disas.append(line)
         except ValueError:
             if disas.data:
-                if printable(disas.data[-1]):
+                if ('...' in line) and printable(disas.data[-1]):
                     disas.data += [0]
                 disas.show()
             print line.rstrip()
