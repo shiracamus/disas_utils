@@ -39,7 +39,7 @@ Disassembly of section .rodata:
 ```console
 $ objdump -D -Mintel /bin/ls > ls.dis
 $ vi ls.dis
-変換したい範囲の先頭行で ma
-変換したい範囲の採集行で mb
+ma (at the top of line for converting)
+mb (at the end of line for converting)
 :'a,'b!python dis2str.py
 ```
