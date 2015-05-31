@@ -51,11 +51,11 @@ class TestDis2Str(unittest.TestCase):
         self.assertTrue(strlen(hexa2data('61 62 00 63')) == 2)
 
     def test_binlen(self):
-        self.assertTrue(strlen(hexa2data('61')) == 0)
-        self.assertTrue(strlen(hexa2data('00')) == 1)
-        self.assertTrue(strlen(hexa2data('00 61')) == 1)
-        self.assertTrue(strlen(hexa2data('00 01')) == 2)
-        self.assertTrue(strlen(hexa2data('00 01 62 03')) == 2)
+        self.assertTrue(binlen(hexa2data('61')) == 0)
+        self.assertTrue(binlen(hexa2data('00')) == 1)
+        self.assertTrue(binlen(hexa2data('00 61')) == 1)
+        self.assertTrue(binlen(hexa2data('00 01')) == 2)
+        self.assertTrue(binlen(hexa2data('00 01 62 03')) == 2)
 
 if __name__ == '__main__':
     unittest.main()
