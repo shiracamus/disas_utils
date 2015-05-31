@@ -1,7 +1,7 @@
 # disas_utils
 Utilities for the objdump's disassemble outputs.
 
-sample
+sample of dis2str.py:
 
 ```console
 $ objdump -d -j .rodata /bin/ls | python dis2str.py
@@ -36,10 +36,51 @@ Disassembly of section .rodata:
   411890:       64 00                   
 ```
 
+or
+
 ```console
 $ objdump -D -Mintel /bin/ls > ls.dis
 $ vi ls.dis
-ma (at the top of line for converting)
-mb (at the end of line for converting)
+ma (at the top of line of a convert area)
+mb (at the end of line of a convert area)
 :'a,'b!python dis2str.py
+```
+
+sample of dis2int.py:
+
+```console
+$ objdump -d -j .data /bin/ls | python dis2int.py
+
+
+/bin/ls:     file format elf64-x86-64
+
+
+Disassembly of section .data:
+
+0000000000619360 <.data>:
+	...
+  619380:	02 00 00 00             	# "....", 0x00000002, 2
+  619384:	00 00 00 00             	# "....", 0x00000000, 0
+  619388:	c3 1a 41 00             	# "..A.", 0x00411ac3, 4266691
+  61938c:	00 00 00 00             	# "....", 0x00000000, 0
+  619390:	01 00 00 00             	# "....", 0x00000001, 1
+  619394:	00 00 00 00             	# "....", 0x00000000, 0
+  619398:	dd 1a 41 00             	# "..A.", 0x00411add, 4266717
+  61939c:	00                      	# "."   , 0x00000000, 0
+	...
+  6193ad:	00 00 00 01             	# "....", 0x01000000, 16777216
+  6193b1:	00 00 00 00             	# "....", 0x00000000, 0
+  6193b5:	00 00 00 25             	# "...%", 0x25000000, 620756992
+  6193b9:	18 41 00 00             	# ".A..", 0x00004118, 16664
+	...
+```
+
+or
+
+```console
+$ objdump -D -Mintel /bin/ls > ls.dis
+$ vi ls.dis
+ma (at the top of line of a convert area)
+mb (at the end of line of a convert area)
+:'a,'b!python dis2int.py
 ```
